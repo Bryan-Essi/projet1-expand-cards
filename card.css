@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "EB Garamond", serif;
+  }
+
+  :root{
+    --width_collapse: 5.5rem ;
+    --width_expand: 70%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+body::before {
+    content: '';
+    background-image: url(image/pexels-lina-1524242.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0.85;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-wrapper-expand {
+    max-width: 40rem ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+/* .card-wrapper-expand::before {
+    content: '';
+    background-image: url(image/pexels-lina-1524242.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0.85;
+} */
+
+
+
+
+  .card-wrapper {
+    position: relative;
+    width: var(--width_collapse);
+    height: fit-content;
+    transition: 1s;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    align-items: center;
+}
+.card-wrapper p{
+    position: absolute;
+    bottom: 1rem;
+    font-family: "EB Garamond", serif;
+    font-weight: 900;
+    color: white;
+}
+.card-wrapper:hover {
+    width: var(--width_expand);
+    gap: 2em;
+}
+
+.card{
+    position: relative;
+    bottom: 0rem;
+    z-index: 2;
+
+    width: 100%;
+    height: 30rem;
+    border-radius: calc(var(--width_collapse) / 2);
+    transition: 1s;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.card:hover {
+    bottom: 1.5rem;
+} 
+.card img{
+    height: 153%;   
+}
